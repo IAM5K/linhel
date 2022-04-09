@@ -9,13 +9,14 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/co
 import { AnalyticsModule } from '@angular/fire/analytics';
 import { GtagModule } from 'angular-gtag';
 import { environment } from 'src/environments/environment';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { OcrComponent } from './ocr/ocr.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { OcrComponent } from './components/ocr/ocr.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { CounterComponent } from './counter/counter.component';
+import { CounterComponent } from './components/counter/counter.component';
 
+import { MaterialModule } from './modules/material/material.module';
 // import { initializeApp } from "firebase";
 // import { getAnalytics } from "firebase/analytics";
 
@@ -35,7 +36,8 @@ import { CounterComponent } from './counter/counter.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     GtagModule.forRoot({ trackingId: environment.firebaseConfig.measurementId, trackPageviews: true }),
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
