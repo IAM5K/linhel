@@ -1,0 +1,20 @@
+<div class="ocr-component">
+  <div class="imagePreview">
+    <img [src]="imageUrl" width="50%" />
+  </div>
+  <div class="uploadFile">
+    <h4 style="color:red">Temporary Image is displayed for reference. Upload new photo to convert image to text.</h4> <h5> <br> By default it can now convert only English Language till 10 April 2022.
+      <br>
+      Rest features will be available soon.
+     </h5>
+    <input type="file" (change)="onselectFile($event)"><br><br>
+    <button mat-raised-button [disabled]="!workerReady" type="submit" (click)="recogonizeImage()">Submit</button>
+    <button mat-raised-button [disabled]="!workerReady" type="reset" (click)="resetOcr()">Scan New</button>
+  </div>
+  <div class="ocrResult">
+    <h4>Progress: {{captureProgress}}%</h4>
+    <p> <b>Extracted Text: </b>
+    {{ ocrResult }}
+  </p>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.ocr-component{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.imagePreview{
+  width: 80%;
+  height: auto;
+  margin: 1% auto;
+  text-align: center;
+}
+.uploadFile{
+  width: 100%;
+  height: auto;
+  background-color: azure;
+  margin: auto;
+  padding: 2% 0%;
+  text-align: center;
+}
+.uploadFile button{
+  margin: 5px 20px;
+}
+.ocrResult{
+  box-sizing: border-box;
+  width: 80%;
+  height: auto;
+  margin: 1% auto;
+  padding: 0;
+  font-size: medium;
+  text-align: justify;
+}
