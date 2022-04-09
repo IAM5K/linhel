@@ -21,7 +21,14 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "lodash"
+              "lodash",
+              "tesseract.js",
+              "devextreme-angular",
+              "devextreme",
+              "@firebase",
+              "@angular/fire",
+              "devexpress-richedit",
+              "x-data-spreadsheet"
             ],
             "outputPath": "dist/linhel",
             "index": "src/index.html",
