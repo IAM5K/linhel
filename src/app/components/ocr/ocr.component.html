@@ -12,6 +12,8 @@
     <button mat-raised-button [disabled]="!workerReady" type="reset" (click)="resetOcr()">Scan New</button>
   </div>
   <div class="ocrResult">
+    <mat-progress-bar class="ocrProgress" mode="determinate" [value]="captureProgress" color="accent"></mat-progress-bar>
+
     <h4>Progress: {{captureProgress}}%</h4>
     <p> <b>Extracted Text: </b>
     {{ ocrResult }}

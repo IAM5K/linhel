@@ -14,9 +14,10 @@ export class OcrComponent implements OnInit {
   workerReady= false;
   ocrResult = "Recognizing...";
   captureProgress=0
-  imageUrl="assets/img/eng_bw.png"
+  initProgress=0
+  imageUrl=""
   language=""
-  langCode=""
+  langCode="hin"
   constructor() {
     this.loadWorker()
     // this.doOCR();
@@ -31,8 +32,8 @@ export class OcrComponent implements OnInit {
       }
     });
     await this.worker.load();
-    await this.worker.loadLanguage('eng');
-    await this.worker.initialize('eng');
+    await this.worker.loadLanguage(this.langCode);
+    await this.worker.initialize(this.langCode);
     console.log("OCR Worker Initialized ")
     this.workerReady= true;
 
@@ -76,14 +77,15 @@ export class OcrComponent implements OnInit {
       var reader = new FileReader();
       reader.readAsDataURL(e.target.files[0]);
       reader.onload= (event: any) =>{
-        console.log("Image Uploaded")
-          this.imageUrl=event.target.result
+        this.imageUrl=event.target.result
+        console.log("Image Uploaded" + this.imageUrl)
+
       }
     }
   }
   resetOcr(){
-    this.ocrResult= ""
-    this.captureProgress=0
-    this.imageUrl=""
+    this.ocrResult=""
+    this.captureProgress = 0
   }
+
 }
