@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { environment } from '../environments/environment';
 import * as firebase from 'firebase/app'
 import { filter } from 'rxjs';
 import { Gtag } from 'angular-gtag';
 
+import { Title, Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,8 +12,14 @@ import { Gtag } from 'angular-gtag';
 })
 export class AppComponent {
   title = 'linhel';
+  opened=true
+  events: string[] = [];
   afterUrl:any
-  constructor(router: Router,gtag: Gtag){
+  constructor(
+    router: Router,
+    gtag: Gtag,
+    private titleService :Title,
+    private metaTags :Meta){
     const navEndEvents = router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     );
@@ -24,5 +30,21 @@ export class AppComponent {
       })  
     });
   }
-
+  ngOnInit():void {
+    this.titleService.setTitle(`Linguistic Helper|Home `)
+    this.metaTags.addTags([
+      {
+        name:'description',
+        content:"Linguistic Helper is a platform to help students, faculties and Researchers to perform their work with help of Computational Linguistic and the mordern tech making it an easy and efficient way of learning Linguistics"
+      },
+      {
+        name:'keyword',
+        content:'Falculty of Arts Bhu, BHU, Linguistic, Linguistic helper, Linguistics, linguistics homwork, homework assistant, research assistant, banaras hindu university, image to text, wx notation, tagging, syllable, tokenizer'
+      },
+      {
+        name:'author',
+        content:'Sandeep Kumar'
+      }
+    ])
+  }
 }

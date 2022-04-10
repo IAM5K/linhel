@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AnalyticsModule } from '@angular/fire/analytics';
 import { GtagModule } from 'angular-gtag';
 import { environment } from 'src/environments/environment';

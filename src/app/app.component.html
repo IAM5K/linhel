@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Linguistic Helper</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+  (closed)="events.push('close!')">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="home">Home</a>
+      <a mat-list-item routerLink="">OCR</a>
+      <a mat-list-item routerLink="frequency"> Frequency</a>
+      <a mat-list-item routerLink="about">About</a>
+      <a mat-list-item routerLink="">Tokenizer</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
+
