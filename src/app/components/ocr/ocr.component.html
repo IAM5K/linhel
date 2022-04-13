@@ -1,22 +1,35 @@
 <div class="ocr-component">
   <div class="imagePreview">
-    <img [src]="imageUrl" width="50%" />
+    <img *ngIf="imageUrl!==''" class="previewedImage" [src]="imageUrl" width="50%" />
   </div>
   <div class="uploadFile">
+
     <h4 style="color:red">Temporary Image is displayed for reference. Upload new photo to convert image to text.</h4> <h5> <br> By default it can now convert only English Language till 10 April 2022.
       <br>
       Rest features will be available soon.
      </h5>
-    <input type="file" (change)="onselectFile($event)"><br><br>
-    <button mat-raised-button [disabled]="!workerReady" type="submit" (click)="recogonizeImage()">Submit</button>
+    <input type="file" (change)="onselectFile($event)" required="true" ><br><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Language</mat-label>
+      <mat-select required="true" [(ngModel)]="langCode" (ngModelChange)="loadWorker()">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let lang of ocrLang" [value]="lang.langCode" >{{lang.langName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>  
+    <h4 *ngIf="language!==''" > Ready to Extract : {{language}}</h4>
+
+    <br>
+    <button mat-raised-button [disabled]="!workerReady || imageUrl==''" type="submit" (click)="recogonizeImage()">Submit</button>
     <button mat-raised-button [disabled]="!workerReady" type="reset" (click)="resetOcr()">Scan New</button>
   </div>
-  <div class="ocrResult">
+  <div class="ocrResult" *ngIf="captureProgress!==0" >
     <mat-progress-bar class="ocrProgress" mode="determinate" [value]="captureProgress" color="accent"></mat-progress-bar>
 
     <h4>Progress: {{captureProgress}}%</h4>
     <p> <b>Extracted Text: </b>
     {{ ocrResult }}
   </p>
+  <button *ngIf="captureProgress==100" mat-raised-button color="accent" (click)="copyText()">Copy Text</button> 
   </div>
 </div>
