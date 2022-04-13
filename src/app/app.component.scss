@@ -1,16 +1,17 @@
 .sidenav-container{
   position: relative;
   width: 100%;
-  height: 95%;
+  height: 93%;
   box-sizing: border-box;
 }
 .sidenav{
-  width: fit-content;
-  // max-width:(fit-content, 10%);
+  box-sizing: border-box;
+  width: max(12%,200px);
 }
 .nav-list{
-  width:95%;
-  margin: auto 30px auto 5px;
-  padding: auto 10px auto 5px;
+  margin: auto 10px auto 10px;
   border-radius: 8px;
+}
+.nav-list a{
+  border-radius: 6px;
 }

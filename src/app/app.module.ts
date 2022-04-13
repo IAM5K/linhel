@@ -13,11 +13,12 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { OcrComponent } from './components/ocr/ocr.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CounterComponent } from './components/counter/counter.component';
 
 import { MaterialModule } from './modules/material/material.module';
-// import { initializeApp } from "firebase";
+
+import { ClipboardModule } from 'ngx-clipboard';// import { initializeApp } from "firebase";
 // import { getAnalytics } from "firebase/analytics";
 
 @NgModule({
@@ -31,12 +32,14 @@ import { MaterialModule } from './modules/material/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ClipboardModule,
     AngularFireDatabaseModule,
     AnalyticsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     GtagModule.forRoot({ trackingId: environment.firebaseConfig.measurementId, trackPageviews: true }),
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   providers: [],
