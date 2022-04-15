@@ -8,7 +8,8 @@
       <br>
       Rest features will be available soon.
      </h5>
-    <input type="file" (change)="onselectFile($event)" required="true" ><br><br>
+     <label for="image">Upload Image: </label>
+    <input name="image" type="file" (change)="onselectFile($event)" required="true" ><br><br>
     <mat-form-field appearance="fill">
       <mat-label>Language</mat-label>
       <mat-select required="true" [(ngModel)]="langCode" (ngModelChange)="loadWorker()">

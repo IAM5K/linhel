@@ -1,0 +1,22 @@
+<div class="tokenizer">
+  <div class="tokenizerForm">
+    <p>Dr. APJ Abdul Kalam is a famous name in the whole world. He is counted among the greatest scientists of the 21st century. Even more, he becomes the 11th president of India and served his country. He was the most valued person of the country as his contribution as a scientist and as a president is beyond compare.</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Textarea</mat-label>
+      <textarea matInput [(ngModel)]="inputToken" ></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" (click)="startTokenizer()" >Start</button>
+    <p>{{inputToken}}</p>
+    <p>Number of Sentences: <b>{{dataLenth}}</b> </p>
+    <ul>
+      <li *ngFor="let data of resultData" >{{data.text}}
+        <ol>
+          <li *ngFor="let term of data.terms" >{{term.text}}: {{term.tags}} 
+            <!-- <span *ngFor="let tag of term.tags>{{tag}}</span> -->
+          </li>
+        </ol> <br>
+      </li>
+    </ul>
+  </div>
+</div>
+
