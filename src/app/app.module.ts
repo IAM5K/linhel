@@ -18,7 +18,9 @@ import { CounterComponent } from './components/counter/counter.component';
 
 import { MaterialModule } from './modules/material/material.module';
 
-import { ClipboardModule } from 'ngx-clipboard';// import { initializeApp } from "firebase";
+import { ClipboardModule } from 'ngx-clipboard';
+import { TokenizerComponent } from './components/tokenizer/tokenizer.component';
+import { SyllableComponent } from './components/syllable/syllable.component';// import { initializeApp } from "firebase";
 // import { getAnalytics } from "firebase/analytics";
 
 @NgModule({
@@ -27,7 +29,9 @@ import { ClipboardModule } from 'ngx-clipboard';// import { initializeApp } from
     HomeComponent,
     AboutComponent,
     OcrComponent,
-    CounterComponent
+    CounterComponent,
+    TokenizerComponent,
+    SyllableComponent
   ],
   imports: [
     BrowserModule,
