@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { font-size: 16px; box-sizing: border-box; margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1,h2,h3,h4,h5{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;}
+.tcenter{
+  text-align: center;
+}
+.mb20{
+  display: block;
+  margin-bottom: 20px ;
+}
+.mt10px{
+  margin-top: 10px;
+}
+.ps5p{
+  padding: 0 5%;
+}
+.bold{
+  font-weight: bold;
+}

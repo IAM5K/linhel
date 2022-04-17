@@ -11,7 +11,7 @@ import { TokenizerComponent } from './components/tokenizer/tokenizer.component';
 const routes: Routes = [
   {path:"home", component: HomeComponent},
   {path:"", component: OcrComponent},
-  {path:"about", component: AboutComponent}, 
+  // {path:"about", component: AboutComponent}, 
   {path:"frequency", component: CounterComponent}, 
   {path:"tokenizer", component: TokenizerComponent}, 
 ];

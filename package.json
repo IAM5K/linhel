@@ -23,6 +23,7 @@
     "@angular/router": "~13.3.0",
     "angular-gtag": "^1.0.4",
     "compromise": "^14.1.0",
+    "firebase-tools": "^10.6.0",
     "ngx-clipboard": "^15.1.0",
     "nlp-compromise": "^7.0.0",
     "rxjs": "~7.5.0",

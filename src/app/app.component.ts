@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import * as firebase from 'firebase/app'
 import { filter } from 'rxjs';
@@ -15,6 +15,7 @@ export class AppComponent {
   opened=true
   events: string[] = [];
   afterUrl:any
+  public innerWidth: any;
   constructor(
     router: Router,
     gtag: Gtag,
@@ -31,6 +32,8 @@ export class AppComponent {
     });
   }
   ngOnInit():void {
+    this.innerWidth = window.innerWidth;
+    this.confSidenav()
     this.titleService.setTitle(`Linguistic Helper|Home `)
     this.metaTags.addTags([
       {
@@ -46,5 +49,19 @@ export class AppComponent {
         content:'Sandeep Kumar'
       }
     ])
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth)
+    this.confSidenav()
+  }
+  confSidenav(){
+    if(this.innerWidth<768){
+      this.opened=false
+    }
+    else{
+      this.opened=true
+    }
   }
 }
