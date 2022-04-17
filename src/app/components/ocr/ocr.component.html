@@ -1,13 +1,24 @@
 <div class="ocr-component">
+  <div class="howToOcr">
+    <h2 class="tcenter bold" >How to use OCR</h2>
+    <p class="ps5p" *ngFor="let step of steps" >{{step}}</p>
+    <br>
+    <h2 class="tcenter" >Available Languages</h2>
+    <ol class="threeCol">
+      <li *ngFor="let lang of ocrLang">{{lang.langName}}</li>
+    </ol>
+  </div>
   <div class="imagePreview">
-    <img *ngIf="imageUrl!==''" class="previewedImage" [src]="imageUrl" width="50%" />
+    <div *ngIf="imageUrl==''" class="viewImg">
+      <h4 class="tcenter bold" >View image preview here.</h4>
+
+    </div>
+    <img *ngIf="imageUrl!==''" class="previewedImage" [src]="imageUrl"/>
   </div>
   <div class="uploadFile">
 
-    <h4 style="color:red">Temporary Image is displayed for reference. Upload new photo to convert image to text.</h4> <h5> <br> By default it can now convert only English Language till 10 April 2022.
-      <br>
-      Rest features will be available soon.
-     </h5>
+    <h3>More features may be available soon. To request a feature contact <a href="https://www.linkedin.com/in/IAM5K/" target="_blank" rel="noopener noreferrer">Developer</a> 
+     </h3>
      <label for="image">Upload Image: </label>
     <input name="image" type="file" (change)="onselectFile($event)" required="true" ><br><br>
     <mat-form-field appearance="fill">

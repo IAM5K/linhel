@@ -124,6 +124,13 @@ export class OcrComponent implements OnInit {
     {langCode:"vie", langName:"Vietnamese",   trainedDataUrl:"vie.traineddata "},
     {langCode:"yid", langName:"Yiddish",   trainedDataUrl:"yid.traineddata"}
   ]
+  steps=[
+    "Step 1: Upload image of which OCR has to be done",
+    "Step 2: Confirm the image in Image Preview section",
+    "Step 3: Select Language from language dropdown.",
+    "Step 4: On succesful selection, buttons will be enabled.",
+    "Step 5: Submit and check the progress bar for the result processing progress."
+  ]
   constructor(private clipboardApi: ClipboardService) {
     // this.loadWorker()
     // this.doOCR();
