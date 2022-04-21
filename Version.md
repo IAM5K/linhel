@@ -6,3 +6,4 @@ v 0.0.3  : Added Side Nav, Home page.
 v 0.0.4  : Added Language Option, better UI, copy to clipboard.
 v 0.0.5  : Tokenizer added with tags,sentence, & word count.
 v 0.0.6  : Added List of language, How to OCR, UI Enhancements in OCR.
+v 0.0.7  : Added and fixed robots.txt and sitemap.xml 
