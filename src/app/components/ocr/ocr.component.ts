@@ -138,7 +138,7 @@ export class OcrComponent implements OnInit {
   async loadWorker(){
     this.worker = createWorker({
       logger: progress => {
-        console.log(progress)
+        // console.log(progress)
         if(progress.status == 'recognizing text'){
           this.captureProgress= parseInt(''+ progress.progress*100)
         }
@@ -149,7 +149,7 @@ export class OcrComponent implements OnInit {
     await this.worker.initialize(this.langCode);
     const languageElement = this.ocrLang.find(element => element.langCode === this.langCode )
     this.language = languageElement?.langName 
-    console.log("OCR Worker Initialized for " +this.langCode)
+    // console.log("OCR Worker Initialized for " +this.langCode)
     this.workerReady= true;
 
   } 
@@ -176,7 +176,7 @@ export class OcrComponent implements OnInit {
     else{
       this.captureProgress = result.progress*100;
     }
-    console.log(result);
+    // console.log(result);
     this.ocrResult = result.data.text;
     // const { data } = await this.worker.getPDF('Tesseract OCR Result');
     // fs.writeFileSync('tesseract-ocr-result.pdf', Buffer.from(data));

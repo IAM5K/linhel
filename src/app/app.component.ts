@@ -53,7 +53,7 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth)
+    // console.log(this.innerWidth)
     this.confSidenav()
   }
   confSidenav(){

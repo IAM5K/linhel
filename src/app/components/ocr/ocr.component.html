@@ -10,7 +10,7 @@
   </div>
   <div class="imagePreview">
     <div *ngIf="imageUrl==''" class="viewImg">
-      <h4 class="tcenter bold" >View image preview here.</h4>
+      <h4 class="tcenter" color="primary" >View image preview here.</h4>
 
     </div>
     <img *ngIf="imageUrl!==''" class="previewedImage" [src]="imageUrl"/>
@@ -30,8 +30,6 @@
     </mat-form-field>
     <br>  
     <h4 *ngIf="language!==''" > Ready to Extract : {{language}}</h4>
-
-    <br>
     <button mat-raised-button [disabled]="!workerReady || imageUrl==''" type="submit" (click)="recogonizeImage()">Submit</button>
     <button mat-raised-button [disabled]="!workerReady" type="reset" (click)="resetOcr()">Scan New</button>
   </div>

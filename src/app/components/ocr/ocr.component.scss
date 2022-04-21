@@ -21,6 +21,9 @@
   column-gap: 20px;
   word-wrap: break-word;
   margin-bottom:50px ;
+  @media screen and (max-width:768px) {
+    column-count: 2;
+  }
   
 }
 .imagePreview{
@@ -34,12 +37,16 @@
   border-radius: 8px;
   min-height: 200px;
   max-height: max-content;
+  @media screen and (max-width:768px) {
+    width: 90%;
+  }
 }
 .previewedImage{
   position: relative;
   display: table-cell;
-  width: auto;
-  height:max(200px,100%); 
+  width: 100%;
+  // height:max(200px,100%); 
+  height: auto;
   vertical-align: middle;
   margin: auto;
   border-radius: 8px;
@@ -49,13 +56,15 @@
   margin: auto;
   top: 15px;
   height: 170px;
-  width: 95%;
+  width: 94%;
   border: 1px dashed;
   border-radius: 8px;
 }
 .viewImg h4{
   line-height: 170px;
   font-size: 1.2rem;
+  font-weight: bold;
+  color: #7b1fa2;
 }
 .uploadFile{
   width: 100%;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+var nlp = require('compromise/two')
 
 @Component({
   selector: 'app-counter',
@@ -39,6 +40,9 @@ export class CounterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let doc = nlp('and you, you will be queen')
+    let str = doc.compute('freq')
+    console.log(str)
   }
 
 }

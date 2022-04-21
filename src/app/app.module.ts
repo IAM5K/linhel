@@ -20,7 +20,8 @@ import { MaterialModule } from './modules/material/material.module';
 
 import { ClipboardModule } from 'ngx-clipboard';
 import { TokenizerComponent } from './components/tokenizer/tokenizer.component';
-import { SyllableComponent } from './components/syllable/syllable.component';// import { initializeApp } from "firebase";
+import { SyllableComponent } from './components/syllable/syllable.component';
+import { WxNotationComponent } from './components/wx-notation/wx-notation.component';// import { initializeApp } from "firebase";
 // import { getAnalytics } from "firebase/analytics";
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SyllableComponent } from './components/syllable/syllable.component';// 
     OcrComponent,
     CounterComponent,
     TokenizerComponent,
-    SyllableComponent
+    SyllableComponent,
+    WxNotationComponent
   ],
   imports: [
     BrowserModule,
