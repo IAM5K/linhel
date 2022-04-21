@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://linguistic-helper.web.app/assets/sitemap.xml

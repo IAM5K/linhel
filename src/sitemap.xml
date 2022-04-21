@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+  <loc>https://linguistic-helper.web.app/</loc>
+  <lastmod>2022-04-17T10:42:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://linguistic-helper.web.app/ocr</loc>
+  <lastmod>2022-04-17T10:42:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://linguistic-helper.web.app/tokenizer</loc>
+  <lastmod>2022-04-17T10:42:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://linguistic-helper.web.app/about</loc>
+  <lastmod>2022-04-17T10:42:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://linguistic-helper.web.app/syllable</loc>
+  <lastmod>2022-04-17T10:42:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://linguistic-helper.web.app/frequency</loc>
+  <lastmod>2022-04-17T10:42:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+
+
+</urlset>
