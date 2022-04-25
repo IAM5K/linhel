@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as Tesseract from 'tesseract.js';
+import { Title, Meta } from '@angular/platform-browser';
 import { createWorker } from 'tesseract.js';
 import { OcrLanguages } from "../../interfaces/ocr-languages";
 // const fs = require('fs');
@@ -131,7 +131,8 @@ export class OcrComponent implements OnInit {
     "Step 4: On succesful selection, buttons will be enabled.",
     "Step 5: Submit and check the progress bar for the result processing progress."
   ]
-  constructor(private clipboardApi: ClipboardService) {
+  constructor(private clipboardApi: ClipboardService,private titleService :Title,
+    private metaTags :Meta) {
     // this.loadWorker()
     // this.doOCR();
   }
@@ -187,6 +188,21 @@ export class OcrComponent implements OnInit {
     this.clipboardApi.copyFromContent(this.ocrResult)
   }
   ngOnInit(): void {
+    this.titleService.setTitle(`Linguistic Helper| One Solution for Linguistic Students and Faculties.`)
+    this.metaTags.addTags([
+      {
+        name:'description',
+        content:"Linguistic Helper is a platform to help students, faculties and Researchers to perform their work with help of Computational Linguistic and the mordern tech making it an easy and efficient way of learning Linguistics"
+      },
+      {
+        name:'keyword',
+        content:'Falculty of Arts Bhu, BHU, Linguistic, Linguistic helper, Linguistics, linguistics homwork, homework assistant, research assistant, banaras hindu university, image to text, wx notation, tagging, syllable, tokenizer'
+      },
+      {
+        name:'author',
+        content:'Sandeep Kumar'
+      }
+    ])
   }
 
   onselectFile(e:any){

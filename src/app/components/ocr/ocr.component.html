@@ -30,8 +30,8 @@
     </mat-form-field>
     <br>  
     <h4 *ngIf="language!==''" > Ready to Extract : {{language}}</h4>
-    <button mat-raised-button [disabled]="!workerReady || imageUrl==''" type="submit" (click)="recogonizeImage()">Submit</button>
-    <button mat-raised-button [disabled]="!workerReady" type="reset" (click)="resetOcr()">Scan New</button>
+    <button aria-label="Center Align" mat-raised-button [disabled]="!workerReady || imageUrl==''" type="submit" (click)="recogonizeImage()">Submit</button>
+    <button aria-label="Center Align" mat-raised-button [disabled]="!workerReady" type="reset" (click)="resetOcr()">Scan New</button>
   </div>
   <div class="ocrResult" *ngIf="captureProgress!==0" >
     <mat-progress-bar class="ocrProgress" mode="determinate" [value]="captureProgress" color="accent"></mat-progress-bar>
