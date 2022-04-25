@@ -1,1 +1,18 @@
-<p>syllable works!</p>
+<div class="syllable">
+  <label for="syllableInput"></label>
+  <textarea name="syllableInput" id="" cols="30" rows="10"></textarea>
+  <button mat-raised-button (click)="syllabify()" aria-label="Center Align">Submit</button>
+
+  <table>
+    <tr>
+      <th>Word</th>
+      <th>Syllables</th>
+      <th>Defination</th>  
+    </tr>
+    <!-- <tr *ngFor="let word of syllableResult.terms">
+      <td>{{word.text}}</td>
+      <td>{{word.syllables}}</td>
+    </tr> -->
+  </table>
+
+</div>
