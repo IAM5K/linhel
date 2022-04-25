@@ -5,9 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AnalyticsModule } from '@angular/fire/analytics';
-import { GtagModule } from 'angular-gtag';
 import { environment } from 'src/environments/environment';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
@@ -17,12 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CounterComponent } from './components/counter/counter.component';
 
 import { MaterialModule } from './modules/material/material.module';
+import { GoogleTagManagerModule } from 'angular-google-tag-manager';
 
 import { ClipboardModule } from 'ngx-clipboard';
 import { TokenizerComponent } from './components/tokenizer/tokenizer.component';
 import { SyllableComponent } from './components/syllable/syllable.component';
-import { WxNotationComponent } from './components/wx-notation/wx-notation.component';// import { initializeApp } from "firebase";
-// import { getAnalytics } from "firebase/analytics";
+import { WxNotationComponent } from './components/wx-notation/wx-notation.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +36,10 @@ import { WxNotationComponent } from './components/wx-notation/wx-notation.compon
     BrowserModule,
     AppRoutingModule,
     ClipboardModule,
-    AngularFireDatabaseModule,
-    AnalyticsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    GtagModule.forRoot({ trackingId: environment.firebaseConfig.measurementId, trackPageviews: true }),
+    GoogleTagManagerModule.forRoot({
+      id: environment.GTM_ID,
+    }),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

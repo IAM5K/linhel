@@ -1,40 +1,31 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import * as firebase from 'firebase/app'
-import { filter } from 'rxjs';
-import { Gtag } from 'angular-gtag';
-
 import { Title, Meta } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'linhel';
+  title = 'Linguistic Helper';
   opened=true
   events: string[] = [];
   afterUrl:any
   public innerWidth: any;
+  sideNavMode:any='push'
   constructor(
-    router: Router,
-    gtag: Gtag,
+    private router: Router,
+    private gtmService: GoogleTagManagerService,
     private titleService :Title,
-    private metaTags :Meta){
-    const navEndEvents = router.events.pipe(
-      filter(e => e instanceof NavigationEnd)
-    );
-    navEndEvents.subscribe((e)=>{
-      this.afterUrl = e
-      gtag.pageview({
-        'page_path': this.afterUrl.url
-      })  
-    });
+    private metaTags :Meta,
+    ){
   }
+
   ngOnInit():void {
     this.innerWidth = window.innerWidth;
-    this.confSidenav()
-    this.titleService.setTitle(`Linguistic Helper|Home `)
+    this.confSidenav();
+    this.titleService.setTitle(`Linguistic Helper| One Solution for Linguistic Students and Faculties.`)
     this.metaTags.addTags([
       {
         name:'description',
@@ -49,19 +40,42 @@ export class AppComponent {
         content:'Sandeep Kumar'
       }
     ])
+
+    this.router.events.forEach(item => {
+      if (item instanceof NavigationEnd) {
+          const gtmTag = {
+              event: 'page',
+              pageName: item.url
+          };
+          this.gtmService.pushTag(gtmTag);
+      }
+  });
   }
+
+
+  // Configure sidenav according to screen size
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.innerWidth = window.innerWidth;
     // console.log(this.innerWidth)
     this.confSidenav()
   }
-  confSidenav(){
-    if(this.innerWidth<768){
+  optSelected(){
+    if(this.innerWidth<821){
       this.opened=false
     }
     else{
       this.opened=true
+    }   
+  }
+  confSidenav(){    
+    if(this.innerWidth<821){
+      this.sideNavMode='over'
+      this.opened=false
+    }
+    else{
+      this.opened=true
+      this.sideNavMode='side'
     }
   }
 }

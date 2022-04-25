@@ -18,6 +18,7 @@ const routes: Routes = [
   {path:"tokenizer", component: TokenizerComponent, pathMatch: 'full'}, 
   {path:"syllable", component: SyllableComponent, pathMatch: 'full'}, 
   {path:"wx-notation", component: WxNotationComponent, pathMatch: 'full'}, 
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

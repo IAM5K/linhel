@@ -1,23 +1,23 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <button mat-icon-button (click)="sidenav.toggle()">
+    <button name="menu-btn" aria-label="Center Align" mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <!-- <img class="logo" src="../assets/linhel.png" alt="Lnguistic Helper Logo"> -->
-    <h1 class="top-title">Linguistic Helper</h1>
+    <h1 class="top-title">{{title}}</h1>
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+  <mat-sidenav class="sidenav" #sidenav [mode]="sideNavMode" [(opened)]="opened" (opened)="events.push('open!')"
   (closed)="events.push('close!')">
     <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink="">Home</a>
-      <a mat-list-item routerLink="about">About</a>
-      <a mat-list-item routerLink="ocr">OCR</a>
-      <a mat-list-item routerLink="frequency"> Frequency</a>
-      <a mat-list-item routerLink="tokenizer">Tokenizer</a>
-      <a mat-list-item routerLink="wx-notation">WX Notation</a>
-      <a mat-list-item routerLink="syllable">Syllable</a>     
+      <a mat-list-item (click)="optSelected()" routerLink="">Home</a>
+      <a mat-list-item (click)="optSelected()" routerLink="about">About</a>
+      <a mat-list-item (click)="optSelected()" routerLink="ocr">OCR</a>
+      <a mat-list-item (click)="optSelected()" routerLink="frequency"> Frequency</a>
+      <a mat-list-item (click)="optSelected()" routerLink="tokenizer">Tokenizer</a>
+      <a mat-list-item (click)="optSelected()" routerLink="wx-notation">WX Notation</a>
+      <a mat-list-item (click)="optSelected()" routerLink="syllable">Syllable</a> 
     </mat-nav-list>
   </mat-sidenav>
   <div class="content-container">
@@ -25,5 +25,5 @@
   </div>
 </mat-sidenav-container>
 <div class="footer">
-    <h3 class="tcenter" >Developed and Maintained by : <a href="https://www.linkedin.com/in/IAM5K/" target="_blank" rel="noopener noreferrer">SK</a> </h3>
-  </div>
+    <p class="tcenter" >Developed and Maintained by : <a href="https://www.linkedin.com/in/IAM5K/" target="_blank" rel="noopener noreferrer">SK</a> </p>
+</div>

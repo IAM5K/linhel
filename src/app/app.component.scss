@@ -31,12 +31,18 @@
   position: fixed;
   bottom: 0%;
   width: 100%;
-  height: 40px;
-  background-color: #aaaaaaaa;
+  z-index: 1;
+  height: 30px;
+  background-color: #303030;
+  color: aqua;
 }
 .footer h3, .footer a {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
   text-decoration: none;
   margin: 0;
   padding:0;
+}
+.footer a{
+  color: orange;
 }
