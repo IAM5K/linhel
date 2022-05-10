@@ -40,9 +40,10 @@ export class CounterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let doc = nlp('and you, you will be queen')
-    let str = doc.compute('freq')
-    console.log(str)
+    console.log("Counter Loaded")
+    // let doc = nlp('and you, you will be queen')
+    // let str = doc.compute('freq')
+    // console.log(str)
   }
 
 }
