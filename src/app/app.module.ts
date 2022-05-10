@@ -48,4 +48,8 @@ import { WxNotationComponent } from './components/wx-notation/wx-notation.compon
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log('AppModule Loaded')
+  }
+}

@@ -8,17 +8,16 @@ import { SyllableComponent } from './components/syllable/syllable.component';
 import { TokenizerComponent } from './components/tokenizer/tokenizer.component';
 import { WxNotationComponent } from './components/wx-notation/wx-notation.component';
 
-
-
 const routes: Routes = [
   {path:"", component: HomeComponent, pathMatch: 'full'},
+  {path:"home", component: HomeComponent, pathMatch: 'full'},
   {path:"ocr", component: OcrComponent, pathMatch: 'full'},
   {path:"about", component: AboutComponent, pathMatch: 'full'}, 
   {path:"frequency", component: CounterComponent, pathMatch: 'full'}, 
   {path:"tokenizer", component: TokenizerComponent, pathMatch: 'full'}, 
   {path:"syllable", component: SyllableComponent, pathMatch: 'full'}, 
   {path:"wx-notation", component: WxNotationComponent, pathMatch: 'full'}, 
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

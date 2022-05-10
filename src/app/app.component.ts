@@ -23,6 +23,7 @@ export class AppComponent {
   }
 
   ngOnInit():void {
+    console.log("AppComponent Loaded")
     this.innerWidth = window.innerWidth;
     this.confSidenav();
     this.titleService.setTitle(`Linguistic Helper| One Solution for Linguistic Students and Faculties.`)
