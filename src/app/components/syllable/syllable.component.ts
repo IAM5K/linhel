@@ -20,6 +20,7 @@ export class SyllableComponent implements OnInit {
   syllableInput:string|undefined
   syllableResult:any
   ngOnInit(): void {
+    console.log("SyllableComponent Loaded")
     this.titleService.setTitle(`Linguistic Helper| One Solution for Linguistic Students and Faculties.`)
     this.metaTags.addTags([
       {

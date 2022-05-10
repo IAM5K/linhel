@@ -10,6 +10,7 @@ export class WxNotationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("WxNotationComponent Loaded")
   }
 
 }

@@ -28,6 +28,7 @@ export class TokenizerComponent implements OnInit {
     console.log(this.dataLenth)
   }
   ngOnInit(): void {
+    console.log("TokenizerComponent Loaded")
     this.titleService.setTitle(`Linguistic Helper| One Solution for Linguistic Students and Faculties.`)
     this.metaTags.addTags([
       {

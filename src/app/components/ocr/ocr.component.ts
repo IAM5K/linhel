@@ -188,6 +188,7 @@ export class OcrComponent implements OnInit {
     this.clipboardApi.copyFromContent(this.ocrResult)
   }
   ngOnInit(): void {
+    console.log("OCR Loaded")
     this.titleService.setTitle(`Linguistic Helper| One Solution for Linguistic Students and Faculties.`)
     this.metaTags.addTags([
       {
